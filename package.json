@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "12"
+    "node": "20"
   },
   "scripts": {
     "start": "node server.js",
@@ -35,5 +35,6 @@
       "prettier --single-quote --write",
       "eslint --fix"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.33.1+sha512.05ba3c1d5d1c18f68df06470d74055e62d41fc110a0c660db1b2dfb2785327f04cf0f68345d4609bc52089e7fa0343c31593b2f9594e2c5d5da426230acc9820"
 }

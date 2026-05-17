@@ -36,7 +36,7 @@ recordRoutes.route('/tareas').get(async function (_req, res) {
   const dbConnect = dbo.getDb();
 
   dbConnect
-    .collection('Tarea')
+    .collection('tareas')
     .find({})
     .limit(50)
     .toArray(function (err, result) {
@@ -57,7 +57,7 @@ recordRoutes.route('/tareas').post(function (req, res) {
   };
 
   dbConnect
-    .collection('Tarea')
+    .collection('tareas')
     .insertOne(matchDocument, function (err, result) {
       if (err) {
         res.status(400).send('Error inserting matches!');
@@ -103,7 +103,7 @@ recordRoutes.route('/tareas/delete/:id').delete((req, res) => {
   const listingQuery = { "_id": new mongodb.ObjectID(delete_id.toString()) };
   //console.log(listingQuery);
   dbConnect
-    .collection('Tarea').deleteOne(listingQuery)
+    .collection('tareas').deleteOne(listingQuery)
     .then(()=>{
       res.status(204).send();
       console.log("Se pudo eliminar"+ listingQuery._id);
